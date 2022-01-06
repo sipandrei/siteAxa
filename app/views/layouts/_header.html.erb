@@ -6,4 +6,5 @@
 <% else %>
   <%= link_to 'Cont Axa', current_user %>
   <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+  <%= link_to 'New Article', new_article_path if current_user.admin%>
 <% end %>
