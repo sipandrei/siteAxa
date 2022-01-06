@@ -22,6 +22,16 @@
   </div>
 
   <div class="field">
+    <%= form.label :banner %>
+    <%= form.file_field :banner %>
+    <div>
+      <% if article.banner.attached? %>
+        <%= image_tag article.banner, width: "100vw", alt: "Article banner preview" %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="field">
     <%= form.label :author_id %>
     <%= form.collection_select :author_id, Author.order(:name), :id, :name %>
   </div>
