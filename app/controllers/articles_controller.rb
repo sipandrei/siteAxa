@@ -1,7 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: %i[ show edit update destroy ]
-  before_action :authenticate_user!, except: %i[ index show ]
-  before_action :require_admin, except: %i[ index show ]
+
   # GET /articles or /articles.json
   def index
     @articles = Article.all
@@ -67,13 +66,6 @@ class ArticlesController < ApplicationController
     # Only allow a list of trusted parameters through.
     def article_params
       params.require(:article).permit(:title, :body, :author_id, :banner)
-    end
-
-    def require_admin
-      unless current_user.admin == true
-        flash[:notice] =  "Nu aveti privilegiile necesare"
-        redirect_to articles_path
-      end
     end
 
 end
