@@ -1,22 +1,11 @@
-<h1><%= link_to 'Revista Axa', root_path %></h1>
+<div class="flex-col-centered">
+  <%= link_to image_tag("logo.png", border: 0, alt: 'Revista Axa', width: '120vmax'), root_path, id: 'logo'  %>
 
-<nav>
-  <div class="auth">
-    <% unless user_signed_in? %>
-      <%= link_to 'Sign In', new_user_session_path %>
-      <%= link_to 'Sign Up', new_user_registration_path %>
-    <% else %>
-      <%= link_to 'Cont Axa', current_user %>
-      <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
-      <%= link_to 'New Article', new_article_path if current_user.admin%>
-      <%= link_to 'New Category', new_category_path if current_user.admin%>
-      <%= link_to 'New Author', new_author_path if current_user.admin%>
-    <% end %>
-  </div>
-
-  <div class="categories">
-    <% Category.all.order(:name).each do |category| %>
-      <%= link_to category.name, category_path(category.id) %>
-    <% end %>
-  </div>
-</nav>
+  <nav>
+    <div class="categories">
+      <% Category.all.order(:name).each do |category| %>
+        <%= link_to category.name, category_path(category.id) %>
+      <% end %>
+    </div>
+  </nav>
+</div>

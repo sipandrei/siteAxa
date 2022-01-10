@@ -1,0 +1,12 @@
+<nav class="auth">
+    <% unless user_signed_in? %>
+      <%= link_to 'Sign In', new_user_session_path %>
+      <%= link_to 'Sign Up', new_user_registration_path %>
+    <% else %>
+      <%= link_to 'Cont Axa', current_user %>
+      <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+      <%= link_to 'Articol Nou', new_article_path if current_user.admin%>
+      <%= link_to 'Categorie Nouă', new_category_path if current_user.admin%>
+      <%= link_to 'Autor Nou', new_author_path if current_user.admin%>
+    <% end %>
+</nav>

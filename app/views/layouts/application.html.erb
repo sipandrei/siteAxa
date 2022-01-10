@@ -3,16 +3,28 @@
   <head>
     <title>Revista Axa</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta author='sipandrei'>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noticia+Text&family=Open+Sans:wght@500&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= render "layouts/header" %>
-    <%= render "layouts/alerts" %>
-    <%= yield %>
+    <header>
+      <%= render "layouts/header" %>
+    </header>
+
+    <main>
+      <%= render "layouts/alerts" %>
+      <%= yield %>
+    </main>
+
+    <footer>
+      <%= render "./layouts/footer" %>
+    </footer>
   </body>
 </html>
