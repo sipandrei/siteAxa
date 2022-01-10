@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :require_authenticated_admin, except: %i[ index show ]
+  skip_before_action :require_authenticated_admin, if: :devise_controller?
 
   private
 
