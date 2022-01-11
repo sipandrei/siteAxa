@@ -41,6 +41,7 @@ nav {
   flex-direction: row;
   font-size: 16px;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 h4 {
