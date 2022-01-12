@@ -1,30 +1,9 @@
-
-<h1>Articles</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Body</th>
-      <th>Author</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @articles.each do |article| %>
-      <tr>
-        <td><%= article.title %></td>
-        <td><%= article.body %></td>
-        <td><%= article.author.name %></td>
-        <td><%= link_to 'Show', article %></td>
-        <% if current_user and current_user.admin %>
-          <td><%= link_to 'Edit', edit_article_path(article) %></td>
-          <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
-      </tr>
+<div class="showcase">
+  <% @articles.limit(4).each do |article| %>
+    <%= link_to article, class: "showcase_element" do %>
+      <%= article.title %>
+      <%= article.body %>
+      <%= article.author.name %>
     <% end %>
-  </tbody>
-</table>
-
-<br>
+  <% end %>
+</div>

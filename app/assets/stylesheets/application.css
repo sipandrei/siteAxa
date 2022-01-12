@@ -13,6 +13,18 @@
  *= require_tree .
  *= require_self
  */
+@media only screen and (max-width: 1000px) {
+  main {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  main {
+    width: 50%;
+  }
+}
+
 :root {
   --main-background-color: #dbdbdb;
   --header-background-color: #ffffff;
@@ -21,8 +33,38 @@
 
 main {
   font-family: "Noticia Text", serif;
-  width: 100vw;
-  background-color: var(--main-background-color);
+  margin: 0 auto;
+  background-color: var(--header-background-color);
+}
+
+.showcase {
+  grid-template-areas:
+    "big small1"
+    "big small2"
+    "big small3";
+  display: grid;
+  margin: 0 auto;
+  width: 50vw;
+}
+
+.showcase a:nth-child(2) {
+  grid-area: small1;
+}
+
+.showcase a:nth-child(3) {
+  grid-area: small2;
+}
+
+.showcase a:nth-child(4) {
+  grid-area: small3;
+}
+
+.showcase a:first-child {
+  grid-area: big;
+}
+
+.showcase-element {
+  display: flex;
 }
 
 footer,
@@ -33,6 +75,7 @@ header {
   display: flex;
   flex-direction: row;
   place-content: center;
+  width: 100vw;
 }
 
 nav {
@@ -49,6 +92,7 @@ h4 {
 }
 
 body {
+  background-color: var(--main-background-color);
   margin: 0;
   height: 100vh;
   display: grid;

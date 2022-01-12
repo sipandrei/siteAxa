@@ -2,5 +2,6 @@
 
 <%= render 'form', article: @article %>
 
+<%= link_to 'Delete', article, method: :delete, data: {confirm: 'Sigur vrei sa stergi articolul?'} if current_user and current_user.admin %> |
 <%= link_to 'Show', @article %> |
 <%= link_to 'Back', articles_path %>
