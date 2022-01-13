@@ -1,9 +1,12 @@
 <div class="showcase">
   <% @articles.limit(4).each do |article| %>
     <%= link_to article, class: "showcase_element" do %>
-      <%= article.title %>
-      <%= article.body %>
-      <%= article.author.name %>
+      <%= image_tag article.banner, class: "showcase-element-banner" %>
+      <div class="showcase-element-text">
+        <%= article.title %>
+        <%= article.body %>
+        <%= article.author.name %>
+      </div>
     <% end %>
   <% end %>
 </div>
