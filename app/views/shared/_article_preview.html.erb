@@ -1,0 +1,8 @@
+<%= link_to article, class: "preview" do %>
+  <%= image_tag article.banner, class: "preview-banner" %>
+  <div class="preview-text">
+    <p class="title"><%= article.title %></p>
+    <p class="author"><%= article.author.name %></p>
+    <p class="author description"><%= article.body %></p>
+  </div>
+<% end %>
