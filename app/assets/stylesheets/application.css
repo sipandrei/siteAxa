@@ -34,6 +34,7 @@
 }
 
 body {
+  word-wrap: break-word;
   overflow-x: hidden;
   background-color: var(--main-background-color);
   margin: 0;
@@ -141,11 +142,10 @@ main {
   text-overflow: ellipsis;
   max-width: 75%;
   line-height: normal;
-  word-wrap: break-word;
 }
 
-.showcase-bar {
-  font-size: 1vw;
+.showcase-bar p {
+  font-size: 1.5vmax;
 }
 
 p.author {
@@ -260,6 +260,11 @@ small {
   width: 50%;
 }
 
+.title {
+  font-weight: bold;
+  font-size: 1.5vmax;
+}
+
 .preview-banner {
   height: 25vmax;
   width: 50%;
@@ -270,7 +275,6 @@ small {
 }
 
 .description {
-  word-wrap: break-word;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
