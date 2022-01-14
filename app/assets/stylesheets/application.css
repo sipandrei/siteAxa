@@ -28,7 +28,7 @@
 :root {
   --big-font: 3vw;
   --small-font: 2vw;
-  --running-width: 75vw;
+  --running-width: 70vw;
   --main-background-color: hsl(0, 0%, 90%);
   --header-background-color: #ffffff;
 }
@@ -58,7 +58,7 @@ header {
 
 header {
   z-index: 1;
-  padding: 1rem;
+  padding-bottom: 1rem;
   grid-column: 1 / 4;
   grid-area: header;
 }
@@ -84,17 +84,17 @@ main {
   flex-direction: column;
   gap: 2px;
   margin: 5vh auto;
-  max-width: var(--running-width);
-  max-height: var(--running-width);
+  max-width: calc(80 / 100 * var(--running-width));
+  max-height: calc(80 / 100 * var(--running-width));
 }
 
 .big {
-  height: 60%;
+  height: 50%;
   width: 100%;
 }
 
 .showcase-bar {
-  height: 40%;
+  height: 50%;
   display: flex;
   flex-direction: row;
 }
@@ -109,9 +109,10 @@ main {
   height: 100%;
   min-width: 33%;
   margin: 0 auto 0.5% auto;
-  aspect-ratio: 4/3;
+  aspect-ratio: 16/9;
   position: relative;
   background-color: rgb(218, 218, 218);
+  object-fit: contain;
 }
 
 .showcase-element-text {
@@ -125,7 +126,7 @@ main {
   bottom: 0;
   border: hidden;
   border-radius: 1%;
-  background-color: rgb(189, 189, 189);
+  background-color: rgba(189, 189, 189, 0.85);
 }
 
 .showcase-element-text p {
@@ -141,6 +142,10 @@ main {
   max-width: 75%;
   line-height: normal;
   word-wrap: break-word;
+}
+
+.showcase-bar {
+  font-size: 1vw;
 }
 
 p.author {
@@ -222,6 +227,7 @@ nav a:hover {
   display: block;
   margin: 1% auto;
   padding-bottom: 1%;
+  font-weight: bold;
   font-size: var(--big-font);
   border-bottom: 2px solid grey;
 }
