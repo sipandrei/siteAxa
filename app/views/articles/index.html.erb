@@ -1,12 +1,20 @@
 <div class="showcase">
-  <% @articles.limit(4).each do |article| %>
-    <%= link_to article, class: "showcase_element" do %>
-      <%= image_tag article.banner, class: "showcase-element-banner" %>
+  <% @articles.order(created_at: :desc).limit(1).each do |article| %>
+    <%= link_to article, class: "showcase-element big", style: "background-image: url(#{rails_blob_url(article.banner)})"  do %>
       <div class="showcase-element-text">
-        <%= article.title %>
-        <%= article.body %>
-        <%= article.author.name %>
+        <p><%= article.title %></p>
+        <p class="author"><%= article.author.name %></p>
       </div>
     <% end %>
   <% end %>
+  <div class="showcase-bar">
+    <% @articles.order(created_at: :desc).offset(1).limit(3).each do |article| %>
+      <%= link_to article, class: "showcase-element", style: "background-image: url(#{rails_blob_url(article.banner)})" do %>
+        <div class="showcase-element-text">
+          <p><%= article.title %></p>
+        <p class="author"><%= article.author.name %></p>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
 </div>
