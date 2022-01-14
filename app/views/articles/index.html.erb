@@ -1,20 +1,20 @@
-<div class="showcase">
-  <% @articles.order(created_at: :desc).limit(1).each do |article| %>
-    <%= link_to article, class: "showcase-element big", style: "background-image: url(#{rails_blob_url(article.banner)})"  do %>
-      <div class="showcase-element-text">
-        <p><%= article.title %></p>
-        <p class="author"><%= article.author.name %></p>
-      </div>
-    <% end %>
-  <% end %>
-  <div class="showcase-bar">
-    <% @articles.order(created_at: :desc).offset(1).limit(3).each do |article| %>
-      <%= link_to article, class: "showcase-element", style: "background-image: url(#{rails_blob_url(article.banner)})" do %>
-        <div class="showcase-element-text">
-          <p><%= article.title %></p>
-        <p class="author"><%= article.author.name %></p>
-        </div>
-      <% end %>
-    <% end %>
-  </div>
+<div class="section">
+  <h2 class="section-title">
+    Ultimele articole
+  </h2>
+  <%= render "./shared/showcase", articles: @articles %>
 </div>
+
+<% Category.order(:name).each do |category| %>
+  <% unless category.articles.empty? %>
+    <div class="section">
+      <a href="<%=category_path(category)%>" class="section-title">
+        <%= category.name.capitalize %>
+        <small>mai multe</small>
+      </a>
+      <% category.articles.order(created_at: :desc).limit(3).each do |article| %>
+        <%= render "./shared/article_preview", article: article %>
+      <% end %>
+      </div>
+  <% end %>
+<% end %>
