@@ -13,22 +13,22 @@
 
   <div class="field">
     <%= form.label :title, 'Titlu' %>
-    <%= form.text_area :title %>
+    <%= form.text_field :title %>
   </div>
 
   <div class="field">
-    <%= form.label :body, 'Descriere' %>
-    <%= form.text_area :body %>
+    <%= form.label :description, "Descriere" %>
+    <%= form.text_area :description %>
   </div>
 
   <div class="field">
-    <%= form.label :article_content %>
-    <%= form.file_field :article_content %>
+    <%= form.label :body, 'Continut articol' %>
+    <%= form.rich_text_area :body %>
   </div>
 
   <div class="field">
-    <%= form.label :banner %>
-    <%= form.file_field :banner %>
+    <%= form.label :banner, default: @article.banner %>
+    <%= form.file_field :banner, accept: "image/*" %>
     <div>
       <% if article.banner.attached? %>
         <%= image_tag article.banner, width: "100vw", alt: "Article banner preview" %>
