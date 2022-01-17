@@ -1,7 +1,18 @@
-<p>
-  <strong>Name:</strong>
-  <%= @category.name %>
-</p>
+<div class="section">
+  <h2 class="section-title">
+    <%= @category.name %>
+    <% if current_user and current_user.admin %>
+      <%= link_to edit_category_path(@category) do %>
+        <small>Editeaza | </small>
+      <% end %>
+    <% end %>
+    <small><%= pluralize(@category.articles.count, "articol", plural: "articole") %></small>
+  </h2>
+  <%= render "./shared/showcase", articles: @category.articles%>
+</div>
 
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+<div class="section">
+  <% @articles.each do |article| %>
+    <%= render "./shared/article_preview", article: article %>
+  <% end %>
+</div>

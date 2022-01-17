@@ -9,7 +9,7 @@
   <% unless category.articles.empty? %>
     <div class="section">
       <a href="<%=category_path(category)%>" class="section-title">
-        <%= category.name.capitalize %>
+        <%= category.name %>
         <small>mai multe</small>
       </a>
       <% category.articles.order(created_at: :desc).limit(3).each do |article| %>

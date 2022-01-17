@@ -14,6 +14,10 @@ Rulati `bundle install`
 
 Rulati `rails active_storage:install`
 
+Rulati `rails active_text:install`
+
 Rulati `rails db:migrate`
+
+Este nevoie de ImageMagick instalat!
 
 Rolul de admin il puteti atribui unui utilizator utilizand consola rails `rails c`

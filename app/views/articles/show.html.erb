@@ -1,18 +1,12 @@
-
-<p>
-  <strong>Title:</strong>
+<h1 class="section-title center-text">
   <%= @article.title %>
-</p>
+  <% if current_user and current_user.admin %>
+      <%= link_to edit_article_path(@article) do %>
+        <small>Editeaza</small>
+      <% end %>
+    <% end %>
+</h1>
 
-<p>
-  <strong>Body:</strong>
-  <%= @article.body %>
-</p>
-
-<p>
-  <strong>Author:</strong>
-  <%= @article.author.name %>
-</p>
-
-<%= link_to 'Edit', edit_article_path(@article) if current_user and current_user.admin %>
-<%= link_to 'Back', articles_path %>
+<div class="article-content">
+  <%= image_tag @article.banner.variant(resize_to_fit: [nil,200]) %>
+</div>
