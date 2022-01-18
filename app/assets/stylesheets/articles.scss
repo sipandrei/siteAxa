@@ -16,5 +16,27 @@
 
 .article-content {
   position: relative;
-  object-fit: contain;
+  margin-bottom: 2%;
+
+  .banner {
+    position: sticky;
+    width: 70vw;
+    top: 2%;
+    z-index: 0;
+    border: hidden;
+    border-radius: 2%;
+  }
+
+  .trix-content {
+    box-shadow: 0px 0px 5px 0.5px whitesmoke;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    background-color: whitesmoke;
+    padding: 5% 2%;
+    img {
+      border: hidden;
+      border-radius: 2%;
+    }
+  }
 }
