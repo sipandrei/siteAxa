@@ -1,4 +1,4 @@
-<h1 class="section-title center-text">
+<h1 class="section-title center-text banner">
   <%= @article.title %>
   <% if current_user and current_user.admin %>
       <%= link_to edit_article_path(@article) do %>
@@ -8,5 +8,6 @@
 </h1>
 
 <div class="article-content">
-  <%= image_tag @article.banner.variant(resize_to_fit: [nil,200]) %>
+  <%= image_tag @article.banner.variant(resize_to_fit: [nil,400]), class: "banner" %>
+  <%= @article.body %>
 </div>
