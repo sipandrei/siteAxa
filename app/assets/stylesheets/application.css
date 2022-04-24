@@ -92,7 +92,7 @@ main {
 
 .showcase-element {
   border: hidden;
-  border-radius: 2%;
+  border-radius: 1vw;
   background-repeat: no-repeat;
   background-size: 100% auto;
   display: block;
@@ -116,7 +116,7 @@ main {
   position: absolute;
   bottom: 0;
   border: hidden;
-  border-radius: 1%;
+  border-radius: 1vw;
   background-color: rgba(189, 189, 189, 0.85);
 }
 
@@ -249,7 +249,7 @@ small {
   text-align: justify;
   max-height: 100%;
   padding: 2%;
-  width: 50%;
+  width: 25%;
 }
 
 .title {
@@ -273,4 +273,8 @@ small {
   -webkit-line-clamp: 3; /* number of lines to show */
   line-clamp: 3;
   -webkit-box-orient: vertical;
+}
+
+.hor-cent {
+  margin: auto;
 }
