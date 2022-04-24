@@ -2,7 +2,7 @@
   <h2 class="section-title">
     Ultimele articole
   </h2>
-  <%= render "./shared/showcase", articles: @articles %>
+  <%= render "shared/showcase", articles: @articles %>
 </div>
 
 <% Category.order(:name).each do |category| %>
@@ -13,7 +13,7 @@
         <small>mai multe</small>
       </a>
       <% category.articles.order(created_at: :desc).limit(3).each do |article| %>
-        <%= render "./shared/article_preview", article: article %>
+        <%= render "shared/article_preview", article: article %>
       <% end %>
       </div>
   <% end %>

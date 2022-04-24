@@ -8,11 +8,11 @@
     <% end %>
     <small><%= pluralize(@category.articles.count, "articol", plural: "articole") %></small>
   </h2>
-  <%= render "./shared/showcase", articles: @category.articles%>
+  <%= render "shared/showcase", articles: @category.articles%>
 </div>
 
 <div class="section">
   <% @articles.each do |article| %>
-    <%= render "./shared/article_preview", article: article %>
+    <%= render "shared/article_preview", article: article %>
   <% end %>
 </div>
