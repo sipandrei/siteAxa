@@ -1,6 +1,7 @@
 class Article < ApplicationRecord
   validates :title, presence: true
   validates :body, presence: true
+  validates :banner, presence: true
   belongs_to :author
   belongs_to :category
   has_many :comments, dependent: :destroy
