@@ -46,6 +46,7 @@ header {
   place-content: center;
   width: 100vw;
   font-family: "Open Sans", sans-serif;
+  text-align: center;
 }
 
 header {
@@ -143,6 +144,10 @@ main {
 p.author {
   font-size: 1vw;
   color: #333;
+}
+
+.auth {
+  font-size: 0.7rem;
 }
 
 .big p {
