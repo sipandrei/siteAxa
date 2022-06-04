@@ -11,6 +11,9 @@ class Article < ApplicationRecord
 
   #before_save :reduce_banner
 
+  extend FriendlyId
+  friendly_id :title, use: :slugged
+
   private
 
   def reduce_banner

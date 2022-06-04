@@ -59,3 +59,4 @@ gem 'devise', '~> 4.8', '>= 4.8.1'
 gem 'kaminari'
 gem 'active_storage_validations'
 gem "aws-sdk-s3", require: false
+gem 'friendly_id', '~> 5.4.0'
