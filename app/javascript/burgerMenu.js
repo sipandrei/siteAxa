@@ -1,8 +1,7 @@
-window.addEventListener("DOMContentLoaded", (_event) => {
+window.addEventListener("load", (_event) => {
   const burgerButton = document.querySelector(".burger-button");
   const burgerMenu = document.querySelector(".burger-menu");
   let visible = false;
-
   burgerButton.addEventListener("click", () => {
     visible = !visible;
     toggling(visible);
