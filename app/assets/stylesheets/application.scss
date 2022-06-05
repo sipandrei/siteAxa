@@ -17,8 +17,8 @@
 //= require actiontext
 
 :root {
-  --big-font: 3vw;
-  --small-font: 2vw;
+  --big-font: 1.5rem;
+  --small-font: 1rem;
   --running-width: 70vw;
   --main-background-color: hsl(0, 0%, 90%);
   --header-background-color: #ffffff;
@@ -142,7 +142,7 @@ main {
 }
 
 p.author {
-  font-size: 1vw;
+  font-size: 1rem;
   color: #333;
 }
 
@@ -213,6 +213,7 @@ nav a:hover {
 
 .flex-col-centered {
   display: flex;
+  gap: 0.3vh;
   flex-direction: column;
   place-items: center;
 }
@@ -284,4 +285,37 @@ small {
 
 .hor-cent {
   margin: auto;
+}
+
+.burger-menu {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+  display: none;
+}
+
+.burger-button {
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 1000px) {
+  .categories {
+    visibility: visible;
+  }
+
+  .burger-menu,
+  .burger-button {
+    display: none !important;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .categories {
+    display: none;
+  }
+
+  .burger-button {
+    visibility: visible;
+  }
 }
