@@ -8,7 +8,7 @@ Siteul a fost creat folosind frameworkul Ruby on Rails
 
 ### Pentru rularea locala
 
-Dupa ce ati instalat librariile necesare pentru rularea Ruby on Rails puteti copia repozitoriul git
+Dupa ce ati instalat librariile necesare pentru rularea Ruby on Rails puteti copia repozitoriul git.
 
 Rulati `bundle install`
 
