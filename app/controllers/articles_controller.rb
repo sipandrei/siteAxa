@@ -4,10 +4,13 @@ class ArticlesController < ApplicationController
   # GET /articles or /articles.json
   def index
     @articles = Article.all
+    @article = Article.new
   end
 
   # GET /articles/1 or /articles/1.json
   def show
+    @comment = Comment.new
+    @comments = Comment.find_all {|comment| comment.id == :id}
   end
 
   # GET /articles/new
