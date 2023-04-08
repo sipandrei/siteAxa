@@ -22,11 +22,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noticia+Text:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans:wght@300&display=swap" rel="stylesheet">     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <% if @article.id.nil? %>
-      <title>Revista AxA CNDV</title>
-      <meta property="og:title" content="Revista AxA CNDV">
-      <meta property="og:description" content="Revista AxA - ochii și urechile Colegiului Național Dragoș-Vodă">
-      <meta property="og:image" content="<%= asset_url('logo.png') %>">
+    <% if @article.nil? or @article.id.nil?%>
+        <title>Revista AxA CNDV</title>
+        <meta property="og:title" content="Revista AxA CNDV">
+        <meta property="og:description" content="Revista AxA - ochii și urechile Colegiului Național Dragoș-Vodă">
+        <meta property="og:image" content="<%= asset_url('logo.png') %>">
     <% else %>
       <title><%= @article.title %> - Revista AxA CNDV</title>
       <meta property="og:title" content="<%= @article.title %> - Revista AxA CNDV">
