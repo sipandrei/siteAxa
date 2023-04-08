@@ -9,7 +9,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1 or /articles/1.json
   def show
     @comment = Comment.new
-    @comments = Comment.find_all {|comment| comment.id == :id}
+    @comments = Comment.where {|comment| comment.post_id == :id}
   end
 
   # GET /articles/new
